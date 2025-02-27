@@ -5,6 +5,8 @@ import morgan from "morgan"
 
 import routesAdmin from '../src/admin/admin.routes.js'
 import routesAuth from '../src/auth/auth.routes.js'
+import routesCompany from '../src/company/company.routes.js'
+import { defaultAdmin } from "../src/auth/auth.controller.js"
 
 const configs = (app)=>{
     app.use(express.json())
@@ -17,6 +19,7 @@ const configs = (app)=>{
 const routes = (app)=>{
     app.use(routesAdmin)
     app.use(routesAuth)
+    app.use(routesCompany)
 }
 
 export const initServer = ()=>{
@@ -24,6 +27,7 @@ export const initServer = ()=>{
     try {
         configs(app)
         routes(app)
+        defaultAdmin()
         app.listen(process.env.PORT)
         console.log(`Server running in port ${process.env.PORT}`)
     } catch (error) {

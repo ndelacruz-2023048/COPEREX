@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { register } from "./auth.controller.js";
-import { registerAdmin } from "../../middelwares/validators.js";
+import { login } from "./auth.controller.js";
+import { registerAdmin, validLogin } from "../../middelwares/validators.js";
 
 const apiAuth = Router()
 
-apiAuth.post('/register',registerAdmin,register)
+apiAuth.post('/login',validLogin,login)
 
 export default apiAuth

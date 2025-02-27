@@ -17,9 +17,9 @@ const configs = (app)=>{
 }
 
 const routes = (app)=>{
-    app.use(routesAdmin)
-    app.use(routesAuth)
-    app.use(routesCompany)
+    app.use('/v1/admin',routesAdmin)
+    app.use('/v1/admin',routesAuth)
+    app.use('/v1/admin',routesCompany)
 }
 
 export const initServer = ()=>{

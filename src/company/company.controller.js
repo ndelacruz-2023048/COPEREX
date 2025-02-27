@@ -16,3 +16,14 @@ export const newCompany =async (request,response)=>{
     }
 }
 
+export const getCompanies = async(request,response)=>{
+    try {
+
+        const companies = await Company.find()
+
+        response.status(200).send({success:true,message:'Companies',companies})
+    } catch (error) {   
+        response.status(500).send({success:false,message:'Intenal server error'})
+    }
+}
+

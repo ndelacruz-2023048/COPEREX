@@ -134,3 +134,13 @@ export const getCompaniesYearsTrajectory = async (request, response) => {
 }
 
 
+export const getCompaniesByCategory =async (request,response)=>{
+    try {
+        const {category} = request.query
+        const filterByCategory =await Company.find({businessCategory:category})
+        response.status(200).send({success:false,message:"Categories",Filter:filterByCategory})
+    } catch (error) {
+        response.status(500).send({success:true,message:'Internal server error'})
+    }
+}
+

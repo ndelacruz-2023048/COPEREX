@@ -1,5 +1,6 @@
 import { body, query } from "express-validator";
 import { validateErrors } from "./validate.errors.js";
+import Company from "../src/company/company.model.js";
 
 export const registerAdmin = [
     body('name','Name is required').notEmpty(),
@@ -49,10 +50,10 @@ export const registerCompany = [
     validateErrors
 ]
 
-export const validateCategoryFilter = [
+export const validateOrderAlphabetic = [
     query('filter').isString().withMessage('Filter must be a string').isIn(['a-z','z-a']).withMessage('Filter must be a-z or z-a'),
+    query('atribute').isString().withMessage('Must be a string').isIn(['name','webSite','impactLevel','companySize']).withMessage('Required for order alphetic by one atribute must be name, webSite,companySize or impactLevel'),
     validateErrors,
-    query('atribute').isString().isIn(['name','webSite','impactLevel','companySize']).withMessage('Filter must be name, webSite,companySize or impactLevel'),
 ]
 
 export const validateYearsTrajectory = [
@@ -61,6 +62,10 @@ export const validateYearsTrajectory = [
     query('greaterThan').optional().isNumeric().withMessage('Filter must be number'),
     query('lessThan').optional().isNumeric().withMessage('Filter must be number'),
     validateErrors
+]
 
 
+export const validateCategoryFilter = [
+    query('category').optional().isString().withMessage('Filter must be a string'),
+    validateErrors
 ]

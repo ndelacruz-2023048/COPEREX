@@ -27,3 +27,14 @@ export const getCompanies = async(request,response)=>{
     }
 }
 
+export const getCompaniesFilterAlphabetic = async(request,response)=>{
+    try {
+        const query = request.query
+        const orderCategory = query.filter === 'a-z' ? 1 : -1
+        const azCompany = await Company.find().sort({[query.atribute]:orderCategory})
+        response.status(200).send({success:true,message:'Companies by category',Companies:azCompany})
+    } catch (error) {
+        response.status(500).send({success:false,message:'Intenal server error'})
+    }
+}
+

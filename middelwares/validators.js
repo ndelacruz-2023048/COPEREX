@@ -1,4 +1,4 @@
-import { body } from "express-validator";
+import { body, query } from "express-validator";
 import { validateErrors } from "./validate.errors.js";
 
 export const registerAdmin = [
@@ -47,4 +47,10 @@ export const registerCompany = [
         .notEmpty().withMessage('Business category is required')
         .isString().withMessage('Business category must be a string'),
     validateErrors
+]
+
+export const validateCategoryFilter = [
+    query('filter').isString().withMessage('Filter must be a string').isIn(['a-z','z-a']).withMessage('Filter must be a-z or z-a'),
+    validateErrors,
+    query('atribute').isString().isIn(['name','webSite','impactLevel','companySize']).withMessage('Filter must be name, webSite,companySize or impactLevel'),
 ]

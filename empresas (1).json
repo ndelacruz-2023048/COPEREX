@@ -1,0 +1,110 @@
+[
+    {
+        "name": "Innovative Tech Solutions",
+        "direction": "1234 Silicon Valley, Suite 56, San Francisco, CA, USA",
+        "companySize": "Medium",
+        "webSite": "https://www.innovativetechsolutions.com",
+        "impactLevel": "International",
+        "yearsOfTrajectory": 10,
+        "businessCategory": "Technology"
+    },
+    {
+        "name": "Green Energy Corp",
+        "direction": "5678 Renewable Street, Austin, TX, USA",
+        "companySize": "Large",
+        "webSite": "https://www.greenenergycorp.com",
+        "impactLevel": "National",
+        "yearsOfTrajectory": 15,
+        "businessCategory": "Energy"
+    },
+    {
+        "name": "NextGen Robotics",
+        "direction": "9101 AI Road, Boston, MA, USA",
+        "companySize": "Small",
+        "webSite": "https://www.nextgenrobotics.com",
+        "impactLevel": "Regional",
+        "yearsOfTrajectory": 5,
+        "businessCategory": "Robotics"
+    },
+    {
+        "name": "FinTech Pioneers",
+        "direction": "222 Wall Street, New York, NY, USA",
+        "companySize": "Medium",
+        "webSite": "https://www.fintechpioneers.com",
+        "impactLevel": "International",
+        "yearsOfTrajectory": 12,
+        "businessCategory": "Finance"
+    },
+    {
+        "name": "HealthFirst Solutions",
+        "direction": "789 Medical Park, Chicago, IL, USA",
+        "companySize": "Large",
+        "webSite": "https://www.healthfirst.com",
+        "impactLevel": "National",
+        "yearsOfTrajectory": 20,
+        "businessCategory": "Healthcare"
+    },
+    {
+        "name": "EduSmart Learning",
+        "direction": "1011 Knowledge Blvd, San Jose, CA, USA",
+        "companySize": "Small",
+        "webSite": "https://www.edusmartlearning.com",
+        "impactLevel": "Regional",
+        "yearsOfTrajectory": 8,
+        "businessCategory": "Education"
+    },
+    {
+        "name": "AgroTech Innovations",
+        "direction": "456 Green Field, Iowa, USA",
+        "companySize": "Medium",
+        "webSite": "https://www.agrotech.com",
+        "impactLevel": "National",
+        "yearsOfTrajectory": 14,
+        "businessCategory": "Agriculture"
+    },
+    {
+        "name": "CyberSecure Ltd.",
+        "direction": "101 Cyber Park, Seattle, WA, USA",
+        "companySize": "Small",
+        "webSite": "https://www.cybersecure.com",
+        "impactLevel": "International",
+        "yearsOfTrajectory": 7,
+        "businessCategory": "Cybersecurity"
+    },
+    {
+        "name": "SmartHome Solutions",
+        "direction": "404 Automation Drive, Miami, FL, USA",
+        "companySize": "Medium",
+        "webSite": "https://www.smarthomesolutions.com",
+        "impactLevel": "Regional",
+        "yearsOfTrajectory": 9,
+        "businessCategory": "Home Automation"
+    },
+    {
+        "name": "EcoFriendly Packaging",
+        "direction": "909 Sustainability Road, Denver, CO, USA",
+        "companySize": "Large",
+        "webSite": "https://www.ecofriendlypack.com",
+        "impactLevel": "National",
+        "yearsOfTrajectory": 18,
+        "businessCategory": "Sustainability"
+    },
+    {
+        "name": "AI Vision Systems",
+        "direction": "505 AI Park, Palo Alto, CA, USA",
+        "companySize": "Small",
+        "webSite": "https://www.aivisionsystems.com",
+        "impactLevel": "International",
+        "yearsOfTrajectory": 6,
+        "businessCategory": "Artificial Intelligence"
+    },
+    {
+        "name": "Quantum Computing Inc.",
+        "direction": "707 Quantum Lane, Los Angeles, CA, USA",
+        "companySize": "Medium",
+        "webSite": "https://www.quantumcomputing.com",
+        "impactLevel": "Global",
+        "yearsOfTrajectory": 12,
+        "businessCategory": "Technology"
+    }
+]

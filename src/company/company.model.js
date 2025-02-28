@@ -23,7 +23,7 @@ const companySchema = Schema({
         required:[true,'Impact level is required']
     },
     yearsOfTrajectory:{
-        type:String,
+        type:Number,
         required:[true,'Years of trajectory is required']
     },
     businessCategory:{

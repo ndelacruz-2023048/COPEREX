@@ -54,3 +54,13 @@ export const validateCategoryFilter = [
     validateErrors,
     query('atribute').isString().isIn(['name','webSite','impactLevel','companySize']).withMessage('Filter must be name, webSite,companySize or impactLevel'),
 ]
+
+export const validateYearsTrajectory = [
+    query('order').optional().isString().withMessage('Filter must be a string')
+        .isIn(['asc','desc']).withMessage('Filter to order must be asc or desc'),
+    query('greaterThan').optional().isNumeric().withMessage('Filter must be number'),
+    query('lessThan').optional().isNumeric().withMessage('Filter must be number'),
+    validateErrors
+
+
+]

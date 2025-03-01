@@ -1,5 +1,6 @@
 import { isValidObjectId } from 'mongoose'
 import Company from './company.model.js'
+import { generateReport } from '../reports/generateReport.js'
 
 export const newCompany = async (request, response) => {
     try {
@@ -164,6 +165,16 @@ export const updateCompany = async (request,response)=>{
         const updatedCompany = await Company.findByIdAndUpdate(idCompany,data,{new:true})
 
         response.status(200).send({success:true,message:'Company updated succesfully',updatedCompany})
+    } catch (error) {
+        response.status(500).send({success:false,message:'Internal server error'})
+    }
+}
+
+export const generateExcel =async (request,response)=>{
+    try {
+         const data =await Company.find()
+         generateReport(data)
+        response.status(200).send({success:true,message:'Excel generated succesfully',data})
     } catch (error) {
         response.status(500).send({success:false,message:'Internal server error'})
     }

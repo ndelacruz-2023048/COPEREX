@@ -33,12 +33,12 @@ export const login = async (request, response) => {
 export const defaultAdmin = async () => {
     try {
         const user = {
-            name: "admin",
-            lastname: "default",
-            username: "useradmindefault",
-            email: "admin@gmail.com",
-            password: "adm12@Adefaul",
-            department: "Administration"
+            name: process.env.DEFAULT_NAME,
+            lastname: process.env.DEFAULT_LASTNAME,
+            username: process.env.DEFAULT_USERNAME,
+            email: process.env.DEFAULT_EMAIL,
+            password: process.env.DEFAULT_PASSWORD,
+            department: process.env.DEFAULT_DEPARTMENT
         }
 
         let existDefaultAdmin = await Admin.findOne({ username: "useradmindefault", email: "admin@gmail.com" })

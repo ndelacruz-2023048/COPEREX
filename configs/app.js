@@ -7,6 +7,7 @@ import routesAdmin from '../src/admin/admin.routes.js'
 import routesAuth from '../src/auth/auth.routes.js'
 import routesCompany from '../src/company/company.routes.js'
 import { defaultAdmin } from "../src/auth/auth.controller.js"
+import { limiter } from "../middelwares/rate.limit.js"
 
 const configs = (app)=>{
     app.use(express.json())
@@ -14,6 +15,7 @@ const configs = (app)=>{
     app.use(cors())
     app.use(helmet())
     app.use(morgan('dev'))
+    app.use(limiter)
 }
 
 const routes = (app)=>{

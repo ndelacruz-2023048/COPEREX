@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "cf57c1a0-7dd2-4a16-a859-59e01fa694b5",
+		"name": "Coperex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37956955"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var data = JSON.parse(responseBody)\r",
+									"postman.setGlobalVariable('token',data.token)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "userLogin",
+									"value": "useradmindefault",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "adm12@Adefaul",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "AddCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Innovative Tech Solutionss",
+									"type": "text"
+								},
+								{
+									"key": "direction",
+									"value": "1234 Silicon Valley, Suite 56, San Francisco, CA, USA",
+									"type": "text"
+								},
+								{
+									"key": "companySize",
+									"value": "Medium",
+									"type": "text"
+								},
+								{
+									"key": "webSite",
+									"value": "https://www.innovativetechsolutions.com",
+									"type": "text"
+								},
+								{
+									"key": "impactLevel",
+									"value": "International",
+									"type": "text"
+								},
+								{
+									"key": "yearsOfTrajectory",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "businessCategory",
+									"value": "Technology",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_save",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCompany",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Tech Innovators Inc.",
+									"type": "text"
+								},
+								{
+									"key": "direction",
+									"value": "4567 Innovation Drive, Suite 101, New York, NY, USA",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "companySize",
+									"value": "Large",
+									"type": "text"
+								},
+								{
+									"key": "webSite",
+									"value": "https://www.techinnovators.com",
+									"type": "text"
+								},
+								{
+									"key": "impactLevel",
+									"value": "Global",
+									"type": "text"
+								},
+								{
+									"key": "yearsOfTrajectory",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "businessCategory",
+									"value": "Technology",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_update/67c1e7f567b4756fb2ce3556",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_update",
+								"67c1e7f567b4756fb2ce3556"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AllCompanies",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterAlphabetic",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_order_alphabetic?atribute=name&filter=a-z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_order_alphabetic"
+							],
+							"query": [
+								{
+									"key": "atribute",
+									"value": "name"
+								},
+								{
+									"key": "filter",
+									"value": "a-z"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterYearsTrajectory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_years_trajectory?order=asc&greaterThan=8&lessThan=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_years_trajectory"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "asc"
+								},
+								{
+									"key": "greaterThan",
+									"value": "8"
+								},
+								{
+									"key": "lessThan",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FilterCategory",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/company_category?category=Sustainability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"company_category"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "Sustainability"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GenerateExcel",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:2636/v1/admin/generate_excel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "2636",
+							"path": [
+								"v1",
+								"admin",
+								"generate_excel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

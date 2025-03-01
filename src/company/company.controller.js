@@ -94,8 +94,6 @@ const greaterThanAndLessThan = async (query,response)=>{
 export const getCompaniesYearsTrajectory = async (request, response) => {
     try {
         const query = request.query
-        console.log(query);
-        console.log(Object.keys(query))
         if (Object.keys(query).length === 0) {
             const resultWithoutFilters = await Company.find()
             response.status(200).send({ success: true, message: 'Companies by years trajectory',filter:resultWithoutFilters})

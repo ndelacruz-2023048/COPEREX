@@ -52,7 +52,7 @@ export const registerCompany = [
 
 export const validateOrderAlphabetic = [
     query('filter').isString().withMessage('Filter must be a string').isIn(['a-z','z-a']).withMessage('Filter must be a-z or z-a'),
-    query('atribute').isString().withMessage('Must be a string').isIn(['name','webSite','impactLevel','companySize']).withMessage('Required for order alphetic by one atribute must be name, webSite,companySize or impactLevel'),
+    query('atribute').isString().withMessage('Must be a string').isIn(['name','webSite','impactLevel','companySize']).withMessage('Required for order alphetic by one atribute must be: name, webSite,companySize or impactLevel'),
     validateErrors,
 ]
 

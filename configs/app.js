@@ -27,7 +27,6 @@ export const initServer = ()=>{
     try {
         configs(app)
         routes(app)
-        defaultAdmin()
         app.listen(process.env.PORT)
         console.log(`Server running in port ${process.env.PORT}`)
     } catch (error) {

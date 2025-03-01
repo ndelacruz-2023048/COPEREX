@@ -1,3 +1,4 @@
+import { isValidObjectId } from 'mongoose'
 import Company from './company.model.js'
 
 export const newCompany = async (request, response) => {
@@ -142,3 +143,28 @@ export const getCompaniesByCategory =async (request,response)=>{
     }
 }
 
+export const updateCompany = async (request,response)=>{
+    try {
+        const data = request.body
+        const {idCompany} = request.params
+
+        if(!isValidObjectId(idCompany)){
+            return response.status(400).send({success:false,message:'Invalid company Id'})
+        }
+
+        if(Object.keys(data).length===0){
+            return response.status(400).send({success:false,message:'Nothing to update'})
+        }
+        
+        const isValidIdCompany = await Company.findOne({_id:idCompany})
+        if(!isValidIdCompany){
+            return response.status(404).send({success:false,message:'Company Id not found'})
+        }
+
+        const updatedCompany = await Company.findByIdAndUpdate(idCompany,data,{new:true})
+
+        response.status(200).send({success:true,message:'Company updated succesfully',updatedCompany})
+    } catch (error) {
+        response.status(500).send({success:false,message:'Internal server error'})
+    }
+}

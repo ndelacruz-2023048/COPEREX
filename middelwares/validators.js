@@ -69,3 +69,14 @@ export const validateCategoryFilter = [
     query('category').optional().isString().withMessage('Filter must be a string'),
     validateErrors
 ]
+
+export const validateUpdateCompany = [
+    body('name').optional().notEmpty().withMessage('Name cannot be empty').isString().withMessage('Name must be a string'),
+    body('direction').optional().notEmpty().withMessage('Direction cannot be empty').isString().withMessage('Direction must be a string'),
+    body('companySize').optional().notEmpty().withMessage('Company size cannot be empty').isString().withMessage('Company Size must be a string'),
+    body('webSite').optional().notEmpty().withMessage('Website cannot be empty').isURL().withMessage('Website must be a valid URL'),
+    body('impactLevel').optional().notEmpty().withMessage('Impact level cannot be empty').isString().withMessage('Impact level must be a string'),
+    body('yearsOfTrajectory').optional().notEmpty().withMessage('Year of trajectory cannot be empty').isNumeric().withMessage('Years of trajectory must be a valid number'),
+    body('businessCategory').optional().notEmpty().withMessage('Bussiness Category cannot be empty').isString().withMessage('Business category must be a string'),
+    validateErrors
+]
